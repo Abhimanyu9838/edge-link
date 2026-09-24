@@ -1,50 +1,19 @@
-/* EdgeLink — Common Styles */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 body { font-family: 'Geist', system-ui, sans-serif; }
 .font-code-sm, .font-code-md, .font-label-mono { font-family: 'JetBrains Mono', monospace; }
-
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #0c0e12; }
 ::-webkit-scrollbar-thumb { background: #282a2e; border-radius: 4px; }
-
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-
 .mobile-menu-btn { display: none; }
 .sidebar-overlay { display: none; }
-
-/* Sirf 767px se chhota = mobile */
 @media (max-width: 767px) {
-  aside {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 100;
-    width: 280px !important;
-    max-width: 85vw;
-  }
+  aside { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; width: 280px !important; max-width: 85vw; }
   aside.open { transform: translateX(0); }
   .pl-\[260px\] { padding-left: 0 !important; }
   header { left: 0 !important; padding-left: 4rem !important; }
-  .mobile-menu-btn {
-    display: flex !important;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 200;
-    background: #1e2024;
-    border: 1px solid #3b494b;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    color: #00f0ff;
-    cursor: pointer;
-  }
-  .sidebar-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-  }
+  .mobile-menu-btn { display: flex !important; position: fixed; top: 1rem; left: 1rem; z-index: 200; background: #1e2024; border: 1px solid #3b494b; border-radius: 0.5rem; padding: 0.5rem; color: #00f0ff; cursor: pointer; }
+  .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 99; }
   .sidebar-overlay.active { display: block; }
   main { padding: 5rem 1rem 2rem 1rem !important; }
   h1 { font-size: 1.5rem !important; }
