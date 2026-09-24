@@ -1,0 +1,14 @@
+/* EdgeLink — Common Styles */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body { font-family: 'Geist', system-ui, sans-serif; }
+.font-code-sm, .font-code-md, .font-label-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0c0e12; }
+::-webkit-scrollbar-thumb { background: #282a2e; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3b494b; }
+
+/* Material Symbols sizing */
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
