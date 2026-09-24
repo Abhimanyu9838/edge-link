@@ -1,13 +1,14 @@
 {
   "name": "url-shortener",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Scalable URL shortener with geo redirection",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["url-shortener", "redis", "postgres"],
+  "author": "Abhimanyu Verma",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
