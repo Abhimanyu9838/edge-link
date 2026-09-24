@@ -53,6 +53,7 @@ tailwind.config = {
 <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body class="bg-surface text-on-surface antialiased">
+<button class="mobile-menu-btn" onclick="document.querySelector('aside').classList.toggle('open')"><span class="material-symbols-outlined">menu</span></a>
 
 <!-- SIDEBAR -->
 <aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col">
@@ -76,7 +77,7 @@ tailwind.config = {
         </div>
       </div>
       <span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span>
-    </button>
+    </a>
   </div>
 
   <nav class="flex-1 overflow-y-auto p-3 space-y-4">
@@ -124,9 +125,9 @@ tailwind.config = {
         <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
         <span class="text-xs font-mono text-tertiary">System Healthy</span>
       </div>
-      <button class="flex items-center gap-1 bg-primary-container text-on-primary text-sm font-semibold px-4 py-2 rounded-lg hover:bg-primary-fixed-dim transition shadow-[0_0_12px_rgba(0,240,255,0.35)]">
+      <a href="index.html" class="flex items-center gap-1 bg-primary-container text-on-primary text-sm font-semibold px-4 py-2 rounded-lg hover:bg-primary-fixed-dim transition shadow-[0_0_12px_rgba(0,240,255,0.35)] cursor-pointer no-underline">
         <span class="material-symbols-outlined text-base">add</span><span>Create Link</span>
-      </button>
+      </a>
     </div>
   </header>
 
@@ -196,14 +197,14 @@ tailwind.config = {
             <label class="block text-xs text-on-surface-variant font-medium">Geo Rules (Optional)</label>
             <button onclick="addGeoRule()" class="text-xs text-primary-container hover:text-primary-fixed flex items-center gap-1">
               <span class="material-symbols-outlined text-sm">add</span>Add Country
-            </button>
+            </a>
           </div>
           <div id="geo-rules-container" class="space-y-2"></div>
         </div>
         <button onclick="handleShorten()" class="w-full bg-primary-container text-on-primary font-semibold py-2.5 rounded-lg hover:bg-primary-fixed-dim transition flex items-center justify-center gap-2 shadow-[0_0_14px_rgba(0,240,255,0.3)]">
           <span class="material-symbols-outlined text-base">bolt</span>
           <span>Shorten URL</span>
-        </button>
+        </a>
         <div id="shorten-result" class="mt-4 hidden">
           <div class="bg-surface-container-lowest rounded-lg p-3 border border-tertiary-container/30">
             <div class="text-xs text-outline mb-1 uppercase">Your Short URL</div>
@@ -211,7 +212,7 @@ tailwind.config = {
               <a id="short-url" href="#" class="font-mono text-primary-container text-sm font-medium truncate"></a>
               <button onclick="copyShortUrl()" class="text-on-surface-variant hover:text-primary-container shrink-0">
                 <span class="material-symbols-outlined text-base">content_copy</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -230,7 +231,7 @@ tailwind.config = {
         <button onclick="handleAnalytics()" class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-medium py-2.5 rounded-lg transition flex items-center justify-center gap-2">
           <span class="material-symbols-outlined text-base">monitoring</span>
           <span>View Analytics</span>
-        </button>
+        </a>
 
         <div id="analytics-result" class="mt-4 hidden space-y-3">
           <div class="grid grid-cols-2 gap-2">
@@ -266,5 +267,6 @@ tailwind.config = {
 
 <script src="js/api.js"></script>
 <script src="js/overview.js"></script>
+<script>if (location.hash === "#shorten") { setTimeout(() => document.getElementById("long-url")?.focus(), 300); }</script>
 </body>
 </html>

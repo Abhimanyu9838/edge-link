@@ -48,6 +48,7 @@ tailwind.config = {
 <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body class="bg-surface text-on-surface antialiased">
+<button class="mobile-menu-btn" onclick="document.querySelector('aside').classList.toggle('open')"><span class="material-symbols-outlined">menu</span></a>
 
 <!-- SIDEBAR -->
 <aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col">
@@ -71,7 +72,7 @@ tailwind.config = {
         </div>
       </div>
       <span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span>
-    </button>
+    </a>
   </div>
 
   <nav class="flex-1 overflow-y-auto p-3 space-y-4">
@@ -118,10 +119,10 @@ tailwind.config = {
       <button id="pause-btn" class="flex items-center gap-1 bg-surface-container hover:bg-surface-container-high text-on-surface text-sm px-4 py-2 rounded-lg transition">
         <span class="material-symbols-outlined text-base" id="pause-icon">pause</span>
         <span id="pause-label">Pause</span>
-      </button>
+      </a>
       <button id="clear-btn" class="flex items-center gap-1 bg-surface-container hover:bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg transition">
         <span class="material-symbols-outlined text-base">delete_sweep</span>
-      </button>
+      </a>
     </div>
   </header>
 
