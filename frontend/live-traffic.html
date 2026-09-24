@@ -48,7 +48,8 @@ tailwind.config = {
 <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body class="bg-surface text-on-surface antialiased">
-<button class="mobile-menu-btn" onclick="document.querySelector('aside').classList.toggle('open')"><span class="material-symbols-outlined">menu</span></a>
+<div class="sidebar-overlay" onclick="document.querySelector('aside').classList.remove('open'); this.classList.remove('active')"></div>
+<button class="mobile-menu-btn" onclick="document.querySelector('aside').classList.add('open'); document.querySelector('.sidebar-overlay').classList.add('active')"><span class="material-symbols-outlined">menu</span></a>
 
 <!-- SIDEBAR -->
 <aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col">

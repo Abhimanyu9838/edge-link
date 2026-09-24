@@ -26,27 +26,70 @@ body { font-family: 'Geist', system-ui, sans-serif; }
   justify-content: center;
 }
 
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active { display: block; }
+
+/* TABLET (max 1024px) */
 @media (max-width: 1024px) {
-  aside { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
+  .grid-cols-5 { grid-template-columns: repeat(3, 1fr) !important; }
+  .grid-cols-6 { grid-template-columns: repeat(3, 1fr) !important; }
+  main { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
+
+/* MOBILE (max 768px) */
+@media (max-width: 768px) {
+  aside {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    width: 280px !important;
+    max-width: 85vw;
+  }
   aside.open { transform: translateX(0); }
   .pl-\[260px\] { padding-left: 0 !important; }
-  header { left: 0 !important; padding-left: 4rem !important; }
+  header {
+    left: 0 !important;
+    padding-left: 4rem !important;
+    padding-right: 1rem !important;
+  }
   .mobile-menu-btn { display: flex !important; }
-}
-
-@media (max-width: 768px) {
-  .grid-cols-5 { grid-template-columns: repeat(2, 1fr) !important; }
-  .grid-cols-6 { grid-template-columns: repeat(3, 1fr) !important; }
+  .grid-cols-5, .grid-cols-6 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-cols-2 { grid-template-columns: 1fr !important; }
   .grid-cols-12 > [class*="col-span-"] { grid-column: span 12 !important; }
-  main { padding-left: 1rem !important; padding-right: 1rem !important; padding-top: 5rem !important; }
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
   h1 { font-size: 1.5rem !important; }
-  aside { width: 280px !important; }
+  h2 { font-size: 1.25rem !important; }
   input, select, button { font-size: 14px !important; }
   table { font-size: 0.75rem !important; }
+  table th, table td { padding: 0.5rem 0.75rem !important; white-space: nowrap; }
 }
 
+/* SMALL MOBILE (max 480px) */
 @media (max-width: 480px) {
-  .grid-cols-5, .grid-cols-6, .grid-cols-3, .grid-cols-2 { grid-template-columns: 1fr !important; }
+  .grid-cols-5, .grid-cols-6, .grid-cols-4, .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
   h1 { font-size: 1.25rem !important; }
-  main { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+  h2 { font-size: 1.1rem !important; }
+  main {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  button, a[class*="px-4"] {
+    font-size: 13px !important;
+    padding: 0.5rem 0.75rem !important;
+  }
 }
